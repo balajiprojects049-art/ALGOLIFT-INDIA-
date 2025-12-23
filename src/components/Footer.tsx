@@ -9,7 +9,7 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="space-y-4">
                         <Link href="/" className="text-2xl font-bold tracking-tight text-white">
-                            Algo<span className="text-emerald-500">Lift</span>
+                            Algo<span className="text-emerald-500">Lift</span> India
                         </Link>
                         <p className="text-slate-400 text-sm leading-relaxed">
                             Hyderabad-based IT services company bridging the gap between education and industry. Real projects, real skills, real careers.
