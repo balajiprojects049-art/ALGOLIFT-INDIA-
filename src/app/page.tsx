@@ -3,6 +3,7 @@ import { ArrowRight, Brain, Code, Cloud, Users, CheckCircle2, Globe, Shield, Sta
 import HeroSlideshow from '@/components/HeroSlideshow';
 import ScrollReveal from '@/components/ScrollReveal';
 import ServicesSlideshow from '@/components/ServicesSlideshow';
+import ClientLogoSlideshow from '@/components/ClientLogoSlideshow';
 import CountUp from '@/components/CountUp';
 
 export default function Home() {
@@ -86,6 +87,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Client Logos Section */}
+      <ClientLogoSlideshow />
 
       {/* Services Slideshow Section */}
       <ServicesSlideshow />

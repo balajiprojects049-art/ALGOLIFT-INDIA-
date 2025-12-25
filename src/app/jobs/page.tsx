@@ -2,6 +2,7 @@ import { Briefcase, MapPin, Clock, Upload, Search } from 'lucide-react';
 import { Metadata } from 'next';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import ScrollReveal from '@/components/ScrollReveal';
+import ClientLogoSlideshow from '@/components/ClientLogoSlideshow';
 
 export const metadata: Metadata = {
     title: 'Careers | AlgoLift India',
@@ -85,7 +86,10 @@ export default function JobsPage() {
                 </div>
             </section>
 
-            <div className="container mx-auto px-6 -mt-24 relative z-20 pb-20">
+            {/* Client Logos Section */}
+            <ClientLogoSlideshow />
+
+            <div className="container mx-auto px-6 pt-16 relative z-20 pb-20">
                 <div className="grid gap-6">
                     {jobs.map((job, i) => (
                         <ScrollReveal key={i} direction="left" delay={i * 100}>

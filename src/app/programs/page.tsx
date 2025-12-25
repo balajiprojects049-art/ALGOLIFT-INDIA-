@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Brain, Code, Cloud, Users, Globe, Shield } from 'lucide-react';
 import { Metadata } from 'next';
 import ScrollReveal from '@/components/ScrollReveal';
+import ClientLogoSlideshow from '@/components/ClientLogoSlideshow';
 
 export const metadata: Metadata = {
     title: 'Services | AlgoLift India',
@@ -45,6 +46,9 @@ export default function ServicesPage() {
                     </p>
                 </div>
             </section>
+
+            {/* Client Logos Section */}
+            <ClientLogoSlideshow />
 
             {/* Our Services Grid Section */}
             <section className="py-20 bg-gradient-to-b from-slate-50 to-white">

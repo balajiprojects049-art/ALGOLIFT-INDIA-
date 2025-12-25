@@ -1,6 +1,7 @@
 import { Code, Server, Database, Cloud, Star } from 'lucide-react';
 import { Metadata } from 'next';
 import ScrollReveal from '@/components/ScrollReveal';
+import ClientLogoSlideshow from '@/components/ClientLogoSlideshow';
 
 export const metadata: Metadata = {
     title: 'Live Projects | AlgoLift India',
@@ -70,7 +71,10 @@ export default function ProjectsPage() {
                 </div>
             </section>
 
-            <div className="container mx-auto px-6 -mt-16 relative z-20 pb-20">
+            {/* Client Logos Section */}
+            <ClientLogoSlideshow />
+
+            <div className="container mx-auto px-6 mt-20 relative z-20 pb-20">
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, i) => (
                         <ScrollReveal key={i} direction="up" delay={i * 100}>

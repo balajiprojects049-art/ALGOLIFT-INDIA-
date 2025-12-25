@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import ScrollReveal from '@/components/ScrollReveal';
+import ClientLogoSlideshow from '@/components/ClientLogoSlideshow';
 
 export const metadata: Metadata = {
     title: 'About Us | AlgoLift India',
@@ -152,7 +154,12 @@ export default function AboutPage() {
                         </ScrollReveal>
                     </div>
                 </div>
-            </section>
-        </div>
+
+                {/* Client Slideshow Section */}
+                <div className="mt-24">
+                    <ClientLogoSlideshow />
+                </div>
+            </section >
+        </div >
     );
 }
