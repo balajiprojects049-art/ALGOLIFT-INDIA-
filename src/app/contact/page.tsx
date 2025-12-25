@@ -1,13 +1,36 @@
-import { Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
-import { Metadata } from 'next';
-import ScrollReveal from '@/components/ScrollReveal';
+'use client';
 
-export const metadata: Metadata = {
-    title: 'Contact Us | AlgoLift India',
-    description: 'Get in touch for free consultancy or IT services.',
-};
+import { Mail, MapPin, Phone, MessageSquare } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
+import { useState } from 'react';
 
 export default function ContactPage() {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        interest: 'AI Strategy & Consulting',
+        message: ''
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.id]: e.target.value
+        });
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        const { name, phone, email, interest, message } = formData;
+
+        const whatsappMessage = `*New Service Request*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Interested In:* ${interest}\n\n*Message:* ${message}`;
+
+        const whatsappUrl = `https://wa.me/918500470333?text=${encodeURIComponent(whatsappMessage)}`;
+
+        window.open(whatsappUrl, '_blank');
+    };
+
     return (
         <div className="bg-slate-50 min-h-screen">
             {/* Dark Hero Section */}
@@ -44,7 +67,7 @@ export default function ContactPage() {
                 <div className="grid lg:grid-cols-2 gap-0 bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-200">
                     {/* Contact Info (Dark Side) */}
                     <ScrollReveal direction="left">
-                        <div className="bg-[#0f172a] text-white p-12 md:p-16 flex flex-col justify-between relative overflow-hidden">
+                        <div className="bg-[#0f172a] text-white p-12 md:p-16 flex flex-col justify-between relative overflow-hidden h-full">
                             <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-[60px]"></div>
 
                             <div className="relative z-10">
@@ -72,7 +95,6 @@ export default function ContactPage() {
                                         </div>
                                         <div>
                                             <h3 className="font-bold text-lg mb-1 text-white">Phone</h3>
-                                            <p className="text-slate-400 text-sm hover:text-emerald-400 transition-colors">+91 85004 60333</p>
                                             <p className="text-slate-400 text-sm hover:text-emerald-400 transition-colors">+91 85004 70333</p>
                                         </div>
                                     </div>
@@ -102,26 +124,52 @@ export default function ContactPage() {
                     <ScrollReveal direction="right" delay={100}>
                         <div className="p-12 md:p-16 flex flex-col justify-center bg-slate-50/50">
                             <h2 className="text-2xl font-bold text-slate-900 mb-8">Request Free Consultancy</h2>
-                            <form className="space-y-6">
+                            <form className="space-y-6" onSubmit={handleSubmit}>
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div>
                                         <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">Full Name</label>
-                                        <input type="text" id="name" className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="John Doe" />
+                                        <input
+                                            type="text"
+                                            id="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
+                                        />
                                     </div>
                                     <div>
                                         <label htmlFor="phone" className="block text-sm font-semibold text-slate-700 mb-2">Phone Number</label>
-                                        <input type="tel" id="phone" className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="+1 555 000 0000" />
+                                        <input
+                                            type="tel"
+                                            id="phone"
+                                            value={formData.phone}
+                                            onChange={handleChange}
+                                            required
+                                            className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
+                                        />
                                     </div>
                                 </div>
 
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">Email Address</label>
-                                    <input type="email" id="email" className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all" placeholder="john@example.com" />
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all"
+                                    />
                                 </div>
 
                                 <div>
                                     <label htmlFor="interest" className="block text-sm font-semibold text-slate-700 mb-2">Interested Service</label>
-                                    <select id="interest" className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all text-slate-600 cursor-pointer">
+                                    <select
+                                        id="interest"
+                                        value={formData.interest}
+                                        onChange={handleChange}
+                                        className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all text-slate-600 cursor-pointer"
+                                    >
                                         <option>AI Strategy & Consulting</option>
                                         <option>Custom Software Development</option>
                                         <option>Staff Augmentation</option>
@@ -132,11 +180,18 @@ export default function ContactPage() {
 
                                 <div>
                                     <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">Message</label>
-                                    <textarea id="message" rows={4} className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all resize-none" placeholder="How can we help you?"></textarea>
+                                    <textarea
+                                        id="message"
+                                        rows={4}
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        required
+                                        className="w-full px-5 py-4 rounded-xl bg-white border border-slate-200 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-500/10 outline-none transition-all resize-none"
+                                    ></textarea>
                                 </div>
 
                                 <button type="submit" className="w-full py-4 bg-emerald-600 text-white font-bold rounded-xl hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-500/25 hover:-translate-y-0.5">
-                                    Send Request
+                                    Send Request via WhatsApp
                                 </button>
                             </form>
                         </div>
