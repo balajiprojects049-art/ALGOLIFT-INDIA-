@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore large video file (too big for GitHub)
+public/7021937_Connection_Cyberspace_3840x2160.mov
