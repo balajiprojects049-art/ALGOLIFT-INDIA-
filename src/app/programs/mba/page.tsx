@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Check, Calendar, Users, Trophy, Briefcase } from 'lucide-react';
 import { Metadata } from 'next';
+import HeroSlideshow from '@/components/HeroSlideshow';
 
 export const metadata: Metadata = {
     title: 'MBA & Operations Program | AlgoLift India',
@@ -12,28 +13,43 @@ export default function MBAProgramPage() {
         <div className="bg-slate-50 min-h-screen pb-20">
             {/* Dark Hero Section */}
             <section className="relative bg-[#020617] pt-32 pb-40 overflow-hidden">
-                {/* Background Effects */}
-                <div className="absolute inset-0 bg-[linear-gradient(to_right,#111827_1px,transparent_1px),linear-gradient(to_bottom,#111827_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30"></div>
-                <div className="absolute top-0 right-1/4 w-96 h-96 bg-teal-500/20 blur-[120px] rounded-full pointer-events-none"></div>
+                {/* Animated Background Slideshow */}
+                <HeroSlideshow
+                    images={[
+                        '/images/hero-careers.png',
+                        '/images/hero-careers-2.png'
+                    ]}
+                    interval={7000}
+                />
 
-                <div className="container mx-auto px-6 relative z-10">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/50 border border-teal-500/30 text-teal-400 text-sm font-medium mb-6">
+                {/* Gradient Overlay */}
+                <div className="hero-overlay"></div>
+
+                {/* Animated Particles */}
+                <div className="animated-particles"></div>
+
+                {/* Background Effects */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_right,#111827_1px,transparent_1px),linear-gradient(to_bottom,#111827_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20 z-[3]"></div>
+                <div className="absolute top-0 right-1/4 w-96 h-96 bg-teal-500/20 blur-[120px] rounded-full pointer-events-none z-[3]"></div>
+
+                <div className="container mx-auto px-6 relative z-10 hero-content">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-800/70 backdrop-blur-sm border border-teal-500/30 text-teal-400 text-sm font-medium mb-6">
                         <Briefcase size={14} /> Management Track
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">MBA Operations & Tech Management</h1>
-                    <p className="text-xl text-slate-400 max-w-3xl leading-relaxed mb-8">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 drop-shadow-2xl">MBA Operations & Tech Management</h1>
+                    <p className="text-xl text-slate-300 max-w-3xl leading-relaxed mb-8 drop-shadow-lg">
                         Bridge the gap between your MBA degree and the IT industry. Specialized training in Tech Recruitment, Digital Marketing, and Business Analysis.
                     </p>
                     <div className="flex flex-wrap gap-6 text-sm font-medium text-slate-300">
-                        <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700/50">
+                        <div className="flex items-center gap-2 bg-slate-800/70 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-700/50">
                             <Calendar className="text-teal-500" size={18} />
                             <span>Duration: 4 Months</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700/50">
+                        <div className="flex items-center gap-2 bg-slate-800/70 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-700/50">
                             <Users className="text-teal-500" size={18} />
                             <span>Format: Offline (Hyderabad)</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-slate-800/50 px-4 py-2 rounded-lg border border-slate-700/50">
+                        <div className="flex items-center gap-2 bg-slate-800/70 backdrop-blur-sm px-4 py-2 rounded-lg border border-slate-700/50">
                             <Trophy className="text-teal-500" size={18} />
                             <span>Job Assistance</span>
                         </div>
