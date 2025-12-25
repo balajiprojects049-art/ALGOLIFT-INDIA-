@@ -66,7 +66,7 @@ export default function ServicesPage() {
                                     <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
                                         AI Services
                                     </h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                                    <p className="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">
                                         Harness the transformative power of artificial intelligence to enhance operational efficiency and unlock new insights for your business.
                                     </p>
                                     <span className="inline-flex items-center text-emerald-600 font-semibold text-sm group-hover:gap-2 transition-all">
@@ -85,7 +85,7 @@ export default function ServicesPage() {
                                     <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
                                         Software Development
                                     </h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                                    <p className="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">
                                         Trusted partner for innovative, scalable software solutions. From concept to deployment, we deliver results that drive your business forward.
                                     </p>
                                     <span className="inline-flex items-center text-blue-600 font-semibold text-sm group-hover:gap-2 transition-all">
@@ -104,7 +104,7 @@ export default function ServicesPage() {
                                     <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-purple-600 transition-colors">
                                         IT Consulting Services
                                     </h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                                    <p className="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">
                                         Strategic guidance through the complex IT landscape with technical expertise to help you make informed decisions that drive success.
                                     </p>
                                     <span className="inline-flex items-center text-purple-600 font-semibold text-sm group-hover:gap-2 transition-all">
@@ -123,7 +123,7 @@ export default function ServicesPage() {
                                     <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-orange-600 transition-colors">
                                         Cloud Solutions
                                     </h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed mb-4 flex-grow">
+                                    <p className="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">
                                         Unlock the full potential of the cloud with scalable, secure infrastructure that enables your team to work from anywhere with flexibility.
                                     </p>
                                     <span className="inline-flex items-center text-orange-600 font-semibold text-sm group-hover:gap-2 transition-all">

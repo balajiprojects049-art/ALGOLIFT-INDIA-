@@ -143,7 +143,7 @@ export default function AboutPage() {
                                             <CheckCircle2 className="text-emerald-500 shrink-0 mt-1" size={20} />
                                             <div>
                                                 <h5 className="font-bold text-slate-900 text-lg">{item.title}</h5>
-                                                <p className="text-slate-500 leading-relaxed text-sm">{item.text}</p>
+                                                <p className="text-slate-700 leading-relaxed text-sm">{item.text}</p>
                                             </div>
                                         </li>
                                     ))}

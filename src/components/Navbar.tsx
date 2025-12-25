@@ -24,7 +24,7 @@ export default function Navbar() {
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-all">
                         A
                     </div>
-                    <span className={cn("text-2xl font-bold tracking-tight transition-colors drop-shadow-sm", logoTextClass)}>
+                    <span className={cn("text-xl md:text-2xl font-bold tracking-tight transition-colors drop-shadow-sm truncate", logoTextClass)}>
                         Algo<span className="text-emerald-500">Lift</span> India
                     </span>
                 </Link>
