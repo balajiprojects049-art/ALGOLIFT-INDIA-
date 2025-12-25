@@ -197,7 +197,7 @@ export default function Home() {
           style={{ willChange: 'transform' }}
           poster="/images/hero-abstract.png"
         >
-          <source src="/7021937_Connection_Cyberspace_3840x2160.mov" type="video/mp4" />
+          <source src="/7021937_Connection_Cyberspace_3840x2160.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
