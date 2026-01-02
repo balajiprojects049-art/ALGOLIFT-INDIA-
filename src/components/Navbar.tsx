@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -11,22 +12,24 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
 
-    // Always use the light/glass theme to support Black "Algo" text
-    const textColorClass = 'text-slate-600 hover:text-emerald-600';
-    const logoTextClass = 'text-slate-900'; // Always Black Algo
-    const navBackgroundClass = 'bg-white/90 backdrop-blur-md border-b border-slate-200 shadow-sm';
+    // Updated colors for dark theme to match logo
+    const textColorClass = 'text-slate-200 hover:text-emerald-400';
+    const logoTextClass = 'text-white'; // Kept for reference
+    const navBackgroundClass = 'bg-[#0b1535] border-b border-slate-800 shadow-sm';
 
     return (
         <nav className={cn('fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4', navBackgroundClass)}>
             <div className="container mx-auto px-6 flex items-center justify-between">
                 {/* Logo */}
-                <Link href="/" className="flex items-center gap-2 group">
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition-all">
-                        A
-                    </div>
-                    <span className={cn("text-xl md:text-2xl font-bold tracking-tight transition-colors drop-shadow-sm truncate", logoTextClass)}>
-                        Algo<span className="text-emerald-500">Lift</span> India
-                    </span>
+                <Link href="/" className="flex items-center gap-2 group ml-10">
+                    <Image
+                        src="/algolift-logo-v2.png"
+                        alt="AlgoLift India"
+                        width={240}
+                        height={240}
+                        className="h-28 w-auto object-contain"
+                        priority
+                    />
                 </Link>
 
                 {/* Desktop Navigation */}
@@ -64,7 +67,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden p-2 text-slate-900"
+                    className="md:hidden p-2 text-slate-200"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X size={24} /> : <Menu size={24} />}
