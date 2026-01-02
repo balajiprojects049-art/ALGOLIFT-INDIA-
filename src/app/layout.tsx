@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     default: 'AlgoLift India | Transforming Businesses with AI & Software',
   },
   description: 'AlgoLift India - A leading global IT services firm providing AI Strategy, Custom Software Development, and Staff Augmentation.',
+  icons: {
+    icon: '/favicon.png', // Explicitly point to the public file
+  },
 };
 
 export default function RootLayout({
