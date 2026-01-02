@@ -24,7 +24,7 @@ export default function ContactPage() {
         e.preventDefault();
         const { name, phone, email, interest, message } = formData;
 
-        const whatsappMessage = `*New Service Request*\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Email:* ${email}\n*Interested In:* ${interest}\n\n*Message:* ${message}`;
+        const whatsappMessage = `New Service Request\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nInterested In: ${interest}\n\nMessage: ${message}`;
 
         const whatsappUrl = `https://wa.me/918500470333?text=${encodeURIComponent(whatsappMessage)}`;
 
